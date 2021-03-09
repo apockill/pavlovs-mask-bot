@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "mask-your-enthusiasm"
+version = "0.1.0"
+description = ""
+authors = ["Alex Thiel <alex.thiel@aotu.ai>"]
+license = "BSD-3"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+pyuf = { git = "https://github.com/uArm-Developer/uArm-Python-SDK.git" }
+dataclasses = { version = "^0.7", python = ">=3.6,<3.7"}
+desert = "^2020.11.18"
+brainframe-api = "^0.28.0"
+python-vlc = "^3.0.11115"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
