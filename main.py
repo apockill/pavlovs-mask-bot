@@ -30,7 +30,6 @@ def respond_to_person(
     bot.set_position(*HOME_POS, speed=100, wait=True)  # TODO: set wait=False
 
     # Play the sound byte
-    print("Playing", sound_file)
     play_sound(sound_file)
 
     # Run the prerecorded robot movement
@@ -106,11 +105,6 @@ def main():
                    and a.alarm_id in alarm_id_to_name.keys()
                    and a.start_time - last_reaction_tstamp >= DEBOUNCE_SECONDS
             ]
-
-            # print([(a.start_time - last_reaction_tstamp >= DEBOUNCE_SECONDS,
-            #         a.id not in responded_to_alerts,
-            #         a.alarm_id in alarm_id_to_name.keys())
-            #        for a in ongoing_alerts])
 
             if len(reactable_alerts) != 1:
                 continue

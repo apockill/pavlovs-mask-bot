@@ -10,7 +10,6 @@ def prompt_get_position(bot: SwiftAPI, prompt: str):
     input(f"Press Enter to record the {prompt} position")
     position = bot.get_position()
     position = [str(round(p)) for p in position]
-    print(f"Recorded position {' '.join(position)}")
     return position
 
 
@@ -23,7 +22,7 @@ def pickup(pos: Tuple[float, float, float],
     bot.set_pump(True)
 
     while bot.get_is_moving():
-        print("Waiting")
+        pass
 
     bot.set_position(z=-100, relative=True, wait=True, speed=150)
     # Wait until the robot hits the next item (or hits the max_down_distance)

@@ -55,8 +55,6 @@ class RobotRecording:
             distance = last_pos.distance(new_pos)
             duration = new_pos.time - last_pos.time
             speed = min(distance / duration, max_speed)
-            print("Duration", duration, "Speed", speed)
-            print(new_pos)
             self.bot.set_position(
                 int(new_pos.x),
                 int(new_pos.y),
@@ -105,7 +103,7 @@ class RobotRecording:
 
             last_state = new_state
             recording._add_state(new_state)
-            print(new_state)
+
 
         logging.info("Finishing recording.")
 
